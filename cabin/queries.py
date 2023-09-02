@@ -49,7 +49,10 @@ def query_2(x):
 
 
 def query_3(t):
-    q = 'your query here'
+    # annotate all ride time length to Ride Objects
+    ride_with_t_length_queryset = Ride.objects.annotate(ride_time_length=F('dropoff_time') - F('pickup_time'))
+    # count rides with more than t time length
+    q = ride_with_t_length_queryset.filter(ride_time_length__gt=t).count()
     return q
 
 
