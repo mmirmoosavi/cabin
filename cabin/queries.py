@@ -76,8 +76,21 @@ def query_4(x, y, r):
 
 
 def query_5(n, c):
-    q = 'your query here'
-    return q
+    # this is only help for model relations
+
+    # level1: Ride (car) ->
+    # level2: Car (owner) ->
+    # level3: Driver
+
+    # find divers that have >= n trip and have at least A car_type or c Color
+
+    drivers_with_n_trips_and_car = Driver.objects.annotate(
+        trip_count=Count('car__ride')
+    ).filter(
+        Q(trip_count__gte=n) &
+        (Q(car__car_type='A') | Q(car__color=c))
+    ).distinct()
+    return drivers_with_n_trips_and_car
 
 
 def query_6(x, t):
