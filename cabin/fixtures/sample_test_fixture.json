@@ -1,0 +1,433 @@
+[
+  {
+    "model": "cabin.account",
+    "pk": "0910*******",
+    "fields": {
+      "first_name": "mohammad javad",
+      "last_name": "naderi",
+      "email": "naderi@quera.ir",
+      "password": "ghhr63j84l6s4km9trh64tr6r8h4b6t8h4",
+      "content_type": 14,
+      "object_id": 3
+    }
+  },
+  {
+    "model": "cabin.account",
+    "pk": "0912*******",
+    "fields": {
+      "first_name": "mostafa",
+      "last_name": "karimi",
+      "email": "mostafa@quera.ir",
+      "password": "gf;erjbg;eg65h4er6nhj6r84rt6bh846th8",
+      "content_type": 14,
+      "object_id": 5
+    }
+  },
+  {
+    "model": "cabin.account",
+    "pk": "09121*******",
+    "fields": {
+      "first_name": "maziar",
+      "last_name": "fallah",
+      "email": "maziar.f@gmail.com",
+      "password": "hf6h4trik4nbv84trhg4rv6h8ty46j84ebv6",
+      "content_type": 11,
+      "object_id": 3
+    }
+  },
+  {
+    "model": "cabin.account",
+    "pk": "09122*******",
+    "fields": {
+      "first_name": "mostafa",
+      "last_name": "bagheri",
+      "email": "bagheri@gmail.com",
+      "password": "jrhntrb4h9tr684r96tb4trbhdehb74t96h7d",
+      "content_type": 11,
+      "object_id": 5
+    }
+  },
+  {
+    "model": "cabin.account",
+    "pk": "09123*******",
+    "fields": {
+      "first_name": "mohsen",
+      "last_name": "amel",
+      "email": "amel@quera.ir",
+      "password": "ylo48,mw651gbv6tj85rhbr1h6rwthjerhb6",
+      "content_type": 14,
+      "object_id": 4
+    }
+  },
+  {
+    "model": "cabin.account",
+    "pk": "0913*******",
+    "fields": {
+      "first_name": "bagher",
+      "last_name": "tabrizi",
+      "email": "tabzizi@quera.ir",
+      "password": "kjhgrmki41jn6tj41nhnaebh64adt5",
+      "content_type": 11,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "cabin.account",
+    "pk": "0920*******",
+    "fields": {
+      "first_name": "mahdi",
+      "last_name": "shokri",
+      "email": "mahdi@quera.ir",
+      "password": "r6nh4tr6h1tr6h416t8hj1656rsj4skj",
+      "content_type": 11,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "cabin.account",
+    "pk": "0935*******",
+    "fields": {
+      "first_name": "meysam",
+      "last_name": "kazemi",
+      "email": "meysam@quera.ir",
+      "password": "b64rn946k416hr41h6r4j16rw4j16gn4hdh6",
+      "content_type": 14,
+      "object_id": 1
+    }
+  },
+  {
+    "model": "cabin.account",
+    "pk": "0938*******",
+    "fields": {
+      "first_name": "ali",
+      "last_name": "sorkhi",
+      "email": "sorkhi@gmail.com",
+      "password": "bg 6n9qxkomxqwrh5brggt5h65tr4bh6",
+      "content_type": 11,
+      "object_id": 4
+    }
+  },
+  {
+    "model": "cabin.account",
+    "pk": "0939*******",
+    "fields": {
+      "first_name": "ali",
+      "last_name": "tehrani",
+      "email": "ali.teh@gmail.com",
+      "password": "fcb51fb1er6vbger16gr1g8rw1gh68gh",
+      "content_type": 14,
+      "object_id": 2
+    }
+  },
+  {
+    "model": "cabin.rider",
+    "pk": 1,
+    "fields": {
+      "rating": 8.5,
+      "x": 43.0,
+      "y": 21.0
+    }
+  },
+  {
+    "model": "cabin.rider",
+    "pk": 2,
+    "fields": {
+      "rating": 7.9,
+      "x": 14.0,
+      "y": 62.0
+    }
+  },
+  {
+    "model": "cabin.rider",
+    "pk": 3,
+    "fields": {
+      "rating": 6.3,
+      "x": 56.0,
+      "y": 13.0
+    }
+  },
+  {
+    "model": "cabin.rider",
+    "pk": 4,
+    "fields": {
+      "rating": 9.5,
+      "x": 35.0,
+      "y": 74.0
+    }
+  },
+  {
+    "model": "cabin.rider",
+    "pk": 5,
+    "fields": {
+      "rating": 6.4,
+      "x": 48.0,
+      "y": 32.0
+    }
+  },
+  {
+    "model": "cabin.driver",
+    "pk": 1,
+    "fields": {
+      "rating": 7.5,
+      "x": 35.0,
+      "y": 17.0,
+      "active": true
+    }
+  },
+  {
+    "model": "cabin.driver",
+    "pk": 2,
+    "fields": {
+      "rating": 5.5,
+      "x": 27.0,
+      "y": 65.0,
+      "active": true
+    }
+  },
+  {
+    "model": "cabin.driver",
+    "pk": 3,
+    "fields": {
+      "rating": 9.6,
+      "x": 75.0,
+      "y": 35.0,
+      "active": true
+    }
+  },
+  {
+    "model": "cabin.driver",
+    "pk": 4,
+    "fields": {
+      "rating": 8.8,
+      "x": 10.0,
+      "y": 0.0,
+      "active": false
+    }
+  },
+  {
+    "model": "cabin.driver",
+    "pk": 5,
+    "fields": {
+      "rating": 6.9,
+      "x": 24.0,
+      "y": 50.0,
+      "active": false
+    }
+  },
+  {
+    "model": "cabin.riderequest",
+    "pk": 1,
+    "fields": {
+      "rider": 1,
+      "x": 35.0,
+      "y": 45.0,
+      "car_type": "A"
+    }
+  },
+  {
+    "model": "cabin.riderequest",
+    "pk": 2,
+    "fields": {
+      "rider": 1,
+      "x": 39.0,
+      "y": 28.0,
+      "car_type": "B"
+    }
+  },
+  {
+    "model": "cabin.riderequest",
+    "pk": 3,
+    "fields": {
+      "rider": 2,
+      "x": 13.0,
+      "y": 26.0,
+      "car_type": "B"
+    }
+  },
+  {
+    "model": "cabin.riderequest",
+    "pk": 4,
+    "fields": {
+      "rider": 3,
+      "x": 34.0,
+      "y": 53.0,
+      "car_type": "C"
+    }
+  },
+  {
+    "model": "cabin.riderequest",
+    "pk": 5,
+    "fields": {
+      "rider": 4,
+      "x": 42.0,
+      "y": 36.0,
+      "car_type": "C"
+    }
+  },
+  {
+    "model": "cabin.car",
+    "pk": 1,
+    "fields": {
+      "owner": 1,
+      "car_type": "A",
+      "model": 93,
+      "color": "White"
+    }
+  },
+  {
+    "model": "cabin.car",
+    "pk": 2,
+    "fields": {
+      "owner": 2,
+      "car_type": "B",
+      "model": 1389,
+      "color": "Black"
+    }
+  },
+  {
+    "model": "cabin.car",
+    "pk": 3,
+    "fields": {
+      "owner": 3,
+      "car_type": "B",
+      "model": 1391,
+      "color": "Gray"
+    }
+  },
+  {
+    "model": "cabin.car",
+    "pk": 4,
+    "fields": {
+      "owner": 5,
+      "car_type": "A",
+      "model": 1397,
+      "color": "White"
+    }
+  },
+  {
+    "model": "cabin.car",
+    "pk": 5,
+    "fields": {
+      "owner": 5,
+      "car_type": "B",
+      "model": 1395,
+      "color": "Gray"
+    }
+  },
+  {
+    "model": "cabin.car",
+    "pk": 6,
+    "fields": {
+      "owner": 4,
+      "car_type": "B",
+      "model": 1389,
+      "color": "Pink"
+    }
+  },
+  {
+    "model": "cabin.car",
+    "pk": 7,
+    "fields": {
+      "owner": 2,
+      "car_type": "B",
+      "model": 1394,
+      "color": "Black"
+    }
+  },
+  {
+    "model": "cabin.ride",
+    "pk": 1,
+    "fields": {
+      "pickup_time": 1504069175,
+      "dropoff_time": 1504079915,
+      "car": 3,
+      "request": 1,
+      "rider_rating": 4.0,
+      "driver_rating": 7.0
+    }
+  },
+   {
+    "model": "cabin.ride",
+    "pk": 5,
+    "fields": {
+      "pickup_time": 1504269175,
+      "dropoff_time": 1504279915,
+      "car": 2,
+      "request": 2,
+      "rider_rating": 6.0,
+      "driver_rating": 9.0
+    }
+  },
+  {
+    "model": "cabin.ride",
+    "pk": 2,
+    "fields": {
+      "pickup_time": 1503668615,
+      "dropoff_time": 1503679535,
+      "car": 5,
+      "request": 3,
+      "rider_rating": 8.0,
+      "driver_rating": 7.0
+    }
+  },
+  {
+    "model": "cabin.ride",
+    "pk": 3,
+    "fields": {
+      "pickup_time": 1501581215,
+      "dropoff_time": 1501589915,
+      "car": 3,
+      "request": 4,
+      "rider_rating": 9.0,
+      "driver_rating": 10.0
+    }
+  },
+  {
+    "model": "cabin.ride",
+    "pk": 4,
+    "fields": {
+      "pickup_time": 1501222175,
+      "dropoff_time": 1501230215,
+      "car": 7,
+      "request": 5,
+      "rider_rating": 10.0,
+      "driver_rating": 8.0
+    }
+  },
+  {
+    "model": "cabin.payment",
+    "pk": 1,
+    "fields": {
+      "ride": 1,
+      "amount": 15000.0,
+      "status": 0
+    }
+  },
+  {
+    "model": "cabin.payment",
+    "pk": 2,
+    "fields": {
+      "ride": 2,
+      "amount": 7500.0,
+      "status": 0
+    }
+  },
+  {
+    "model": "cabin.payment",
+    "pk": 3,
+    "fields": {
+      "ride": 3,
+      "amount": 9000.0,
+      "status": 0
+    }
+  },
+  {
+    "model": "cabin.payment",
+    "pk": 4,
+    "fields": {
+      "ride": 4,
+      "amount": 26000.0,
+      "status": 0
+    }
+  }
+]
