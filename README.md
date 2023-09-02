@@ -66,3 +66,26 @@ python manage.py test
 # for test specific queries
 
 python manage.py test tests.testsample.SampleTests.test_1
+
+# queries problems
+
+queries.py file
+
+    1. The total amount received by a driver with an ID equal to x.
+    2. The list of all trips by a passenger with ID x.
+    3. The number of trips that had a duration (in terms of time) greater than t.
+    4. The list of all drivers who are within a distance less than or equal 
+        to r around the point (x, y) and are also active (ready for work).
+    5. The list of drivers who have either a class A car or a car with color c
+        and have completed at least n trips.
+    6. The list of passengers who have had x or more trips and 
+        have paid more than t in total.
+    7. The list of drivers who have had at least one trip in which the driver's name matches the passenger's name.
+    8. The list of all drivers with an additional column named "n," 
+        indicating the number of trips in which the driver's last name matches the passenger's last name.
+    9. The list of all drivers along with an additional column named "n," 
+        which represents the number of trips in which the car model was X or
+        higher (note that the model is different from the type) and the trip duration was more than t seconds.
+    10. The list of all cars with an additional column named "extra."
+
+
