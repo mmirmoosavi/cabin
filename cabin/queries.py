@@ -126,7 +126,21 @@ def query_6(x, t):
 
 
 def query_7():
-    q = 'your query here'
+    # find drivers with 1 or more than ride_request that has same first_name with the rider
+
+    # annotatate rider and driver first_name on Ride objects
+    rides = Ride.objects.filter(
+        car__owner=OuterRef('pk')
+    ).annotate(
+        rider_first_name=F('request__rider__account__first_name'),
+        driver_first_name=F('car__owner__account__first_name')
+    ).values('id')
+
+    # filter rides that have same driver and rider first_name
+    rides = rides.filter(Q(rider_first_name=F('driver_first_name')))
+
+    # Query to filter drivers who meets the final criteria
+    q = Driver.objects.filter(car__ride__in=Subquery(rides)).distinct()
     return q
 
 
