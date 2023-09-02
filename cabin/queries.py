@@ -57,8 +57,22 @@ def query_3(t):
 
 
 def query_4(x, y, r):
-    q = 'your query here'
-    return q
+    # filter only active drivers first
+    act_driver_and_first_location_filter = Driver.objects.filter(
+        active=True
+    )
+    # compute euclidean distance with annotation
+    annotate_x2_y2_square = act_driver_and_first_location_filter.annotate(
+        euclidean_distance=ExpressionWrapper(
+            (
+                (Sqrt((F('x') - x) ** 2 + (F('y') - y) ** 2))
+            ),
+            output_field=FloatField()
+        )
+    )
+    final_queryset = annotate_x2_y2_square.filter(euclidean_distance__lte=r)
+
+    return final_queryset
 
 
 def query_5(n, c):
