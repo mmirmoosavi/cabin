@@ -38,7 +38,13 @@ def query_1(x):
 
 
 def query_2(x):
-    q = 'your query here'
+    # this is only help for model relations
+
+    # level1: Ride (request) ->
+    # level2: RideRequest (rider) ->
+    # level3: Rider
+    # finds all rides with driver_id = x
+    q = Ride.objects.filter(request__rider__id=x)
     return q
 
 
