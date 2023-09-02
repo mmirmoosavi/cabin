@@ -1,3 +1,7 @@
+from django.db.models import Subquery, OuterRef, Sum, When, Case, IntegerField, F, Value, Q, Count, FloatField, \
+    ExpressionWrapper
+from django.db.models.functions import Coalesce, Abs, Sqrt
+
 from cabin.models import *
 
 
