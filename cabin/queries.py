@@ -94,8 +94,35 @@ def query_5(n, c):
 
 
 def query_6(x, t):
-    q = 'your query here'
-    return q
+    # this is only help for model relations
+
+    # level1: Rider
+    # level2: RideRequest
+    # level3: Ride
+    # level4: Payment
+
+    # Subquery to calculate the ride request count of each rider (that equals to ride count)
+    ride_count_subquery = Ride.objects.filter(
+        request__rider=OuterRef('pk')
+    ).values('request__rider').annotate(
+        ride_count=Count('id')
+    ).values('ride_count')
+
+    # Subquery to calculate the total payment amount for each rider
+    total_payment_subquery = Ride.objects.filter(
+        request__rider=OuterRef('pk')
+    ).values('request__rider').annotate(
+        total_payment=Sum('payment__amount')
+    ).values('total_payment')
+
+    # Query to filter riders who meet the criteria
+    riders_queryset = Rider.objects.annotate(
+        ride_count=Subquery(ride_count_subquery, output_field=models.IntegerField()),
+        total_payment=Subquery(total_payment_subquery, output_field=models.FloatField())
+    ).filter(
+        Q(ride_count__gte=x) & Q(total_payment__gt=t)
+    )
+    return riders_queryset
 
 
 def query_7():
