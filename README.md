@@ -28,14 +28,14 @@ service, we also want to create a similar service. We have also named it cabin.
     │ ├─── models.py
     │ ├─── > queries.py <  We should write Optimized queries >
     │ ├─── views.py
-        │ ├─── init.py
+    │ ├─── init.py
     │ │
     │ ├─── fixtures
     │ │ └─── sample_test_fixture.json
     │ │
     │ └─── migrations
-    │ ├── 0001_initial.py
-    │ └─── init.py
+    │   ├── 0001_initial.py
+    │   └─── init.py
     │
     ├───challenge
     │ ├─── settings.py
@@ -44,8 +44,8 @@ service, we also want to create a similar service. We have also named it cabin.
     │ └─── init.py
     │
     └───tests
-    ├─── testsample.py
-    └─── init.py
+        ├─── testsample.py
+        └─── init.py
 
 # initialization
 
