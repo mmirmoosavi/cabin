@@ -130,9 +130,10 @@ def query_7():
 
     # Annotate the number of ride requests with the same first_name as the driver's
     drivers_with_request_count = Driver.objects.annotate(
-        request_count=Count('car__ride__request',
-                            filter=Q(car__ride__request__rider__account__first_name=F('account__first_name'))
-                            )
+        request_count=Count(
+            expression='car__ride__request',
+            filter=Q(car__ride__request__rider__account__first_name=F('account__first_name'))
+        )
     )
 
     # Filter drivers with 1 or more ride requests that have the same first_name
@@ -141,7 +142,12 @@ def query_7():
 
 
 def query_8():
-    q = 'your query here'
+    q = Driver.objects.annotate(
+        n=Count(
+            expression='car__ride__request',
+            filter=Q(car__ride__request__rider__account__last_name=F('account__last_name'))
+        )
+    )
     return q
 
 
