@@ -135,8 +135,8 @@ def query_7():
                             )
     )
 
-    # Query to filter drivers who meets the final criteria
-    q = Driver.objects.filter(car__ride__in=Subquery(rides)).distinct()
+    # Filter drivers with 1 or more ride requests that have the same first_name
+    q = drivers_with_request_count.filter(request_count__gte=1)
     return q
 
 
