@@ -151,8 +151,16 @@ def query_8():
     return q
 
 
-def query_9(n, t):
-    q = 'your query here'
+def query_9(x, t):
+
+    # find all Drivers rides counts that have greater than or eqaul x
+    # model driver Car and also dropp_off_time - pickup_time >= t
+    q = Driver.objects.annotate(
+        n=Count('car__ride',
+                filter=Q(car__model__gte=x) & Q(car__ride__dropoff_time__gte=F('car__ride__pickup_time') + t),
+                distinct=True
+                ),
+    ).values('id', 'n')
     return q
 
 
