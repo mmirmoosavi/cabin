@@ -1,5 +1,5 @@
 from django.db.models import Subquery, OuterRef, Sum, When, Case, IntegerField, F, Value, Q, Count, FloatField, \
-    ExpressionWrapper
+    ExpressionWrapper, DurationField
 from django.db.models.functions import Coalesce, Abs, Sqrt
 
 from cabin.models import *
@@ -165,5 +165,120 @@ def query_9(x, t):
 
 
 def query_10():
-    q = 'your query here'
-    return q
+    # way 1
+    # rides_subquery = Ride.objects.filter(
+    #     car=OuterRef('pk')
+    # ).annotate(
+    #     ride_count=Count('id', distinct=True),
+    #     ride_length=F('dropoff_time') - F('pickup_time'),
+    #     payment_sum=Sum('payment__amount', distinct=True)
+    # )
+    #
+    # q = Car.objects.annotate(
+    #     extra=Case(
+    #         When(
+    #             car_type='A', then=Coalesce(
+    #                 Subquery(
+    #                     rides_subquery.values('ride_count')
+    #                 ),
+    #                 Value(0),
+    #                 output_field=IntegerField()
+    #             )
+    #         ),
+    #         When(
+    #             car_type='B', then=Coalesce(
+    #                 Subquery(
+    #                     rides_subquery.values('ride_length')
+    #                 ),
+    #                 Value(0),
+    #                 output_field=IntegerField()
+    #             )
+    #         ),
+    #         When(
+    #             car_type='C', then=Coalesce(
+    #                 Subquery(
+    #                     rides_subquery.values('payment_sum')
+    #                 ),
+    #                 Value(0),
+    #                 output_field=IntegerField()
+    #             )
+    #         ),
+    #         output_field=IntegerField()
+    #     )
+    # ).distinct()
+    # print([i.extra for i in q])
+
+    # way 2
+    # car_extra_subquery = Car.objects.filter(pk=OuterRef('pk')).annotate(
+    #     extra=Case(
+    #         When(car_type='A', then=Count('ride', distinct=True)),
+    #         When(car_type='B', then=Sum(F('ride__dropoff_time') - F('ride__pickup_time'), default=Value(0))),
+    #         When(car_type='C', then=Sum(F('ride__payment__amount'), default=Value(0))),
+    #         default=Value(0),
+    #         output_field=IntegerField()
+    #     )
+    # ).values('extra')
+    #
+    # cars_with_extra = Car.objects.annotate(
+    #     extra=Subquery(car_extra_subquery, output_field=IntegerField())
+    # )
+    # print([i.extra for i in cars_with_extra])
+    # return cars_with_extra
+
+    # rides_subquery = Ride.objects.filter(
+    #     car=OuterRef('pk')
+    # ).annotate(
+    #     ride_length=F('dropoff_time') - F('pickup_time'),
+    # ).values('ride_length').annotate(ride_duration=Sum('ride_length')).values('ride_duration')
+    #
+    #
+    # rides_subquery2 = Ride.objects.filter(
+    #     car=OuterRef('pk')
+    # ).values('payment__amount').annotate(payment_sum=Sum('payment__amount')).values('payment_sum')
+
+
+
+    # way 3
+    # q = Car.objects.annotate(
+    #     extra=Case(
+    #         When(
+    #             car_type='A', then=Count('ride', distinct=True)
+    #         ),
+    #         When(
+    #             car_type='B', then=Sum((F('ride__dropoff_time') - F('ride__pickup_time')), default=Value(0))
+    #         ),
+    #         When(
+    #             car_type='C', then=Sum('ride__payment__amount', default=Value(0))
+    #         ),
+    #         default=Value(0),
+    #         output_field=IntegerField()
+    #     )
+    # )
+
+    # way 4
+    # ride_duration_subquery = Ride.objects.filter(car=OuterRef('pk')).annotate(
+    #     duration=ExpressionWrapper(
+    #         F('dropoff_time') - F('pickup_time'),
+    #         output_field=IntegerField()
+    #     )
+    # ).values('car__pk').annotate(
+    #     total_duration=Sum('duration')
+    # ).values('total_duration')
+    #
+    # ride_costs_subquery = Ride.objects.filter(car=OuterRef('pk')).annotate(
+    #     total_ride_cost=Sum(F('payment__amount'))
+    # ).values('total_ride_cost')
+    #
+    # cars_with_extra = Car.objects.annotate(
+    #     extra=Case(
+    #         When(car_type='A', then=Count('ride', distinct=True)),
+    #         When(car_type='B', then=Subquery(ride_duration_subquery, output_field=DurationField())),
+    #         When(car_type='C', then=Subquery(ride_costs_subquery, output_field=FloatField())),
+    #         default=Value(0),
+    #         output_field=FloatField()  # Set the default output field to FloatField
+    #     )
+    # )
+    # print(cars_with_extra)
+
+    # return q
+    pass
