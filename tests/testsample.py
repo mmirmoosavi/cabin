@@ -88,3 +88,26 @@ class SampleTests(TestCase):
             q_list.append(i.id)
         self.assertEqual(sorted(q_list), [3, 5])
 
+    def test_6(self):
+        # only for checking queries has no bugs
+        queries.query_6(0, 0)
+
+    def test_7(self):
+        # only for checking queries has no bugs
+
+        queries.query_7()
+
+    def test_8(self):
+        # only for checking queries has no bugs
+
+        queries.query_8()
+
+    def test_9(self):
+        # only for checking queries has no bugs
+
+        queries.query_9(93, 5000)
+
+    def test_10(self):
+        # only for checking queries has no bugs
+
+        queries.query_10()
