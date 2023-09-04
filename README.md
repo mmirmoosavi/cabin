@@ -86,6 +86,11 @@ queries.py file
     9. The list of all drivers along with an additional column named "n," 
         which represents the number of trips in which the car model was X or
         higher (note that the model is different from the type) and the trip duration was more than t seconds.
-    10. The list of all cars with an additional column named "extra."
+    10. The list of all cars with an additional column called "extra."
+        The "extra" column is of integer type and is defined as follows based on the car type (car_type):
+        
+        If the car type is A, the number of trips taken with that car is placed in the "extra" column.
+        If the car type is B, the total duration of trips taken with that car is placed in the "extra" column.
+        If the car type is C, the total cost of trips taken with that car is placed in the "extra" column.
 
 
